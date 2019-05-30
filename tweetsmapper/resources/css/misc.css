@@ -1,0 +1,7 @@
+/*
+Fix gap between tiles
+https://github.com/Leaflet/Leaflet/issues/3339
+*/
+.leaflet-tile-container img {
+    will-change: unset !important;
+}

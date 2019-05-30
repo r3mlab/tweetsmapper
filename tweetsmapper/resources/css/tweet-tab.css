@@ -1,0 +1,256 @@
+.tweet-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tweet {
+    padding: 20px 20px 11.6px 20px;
+    width: 470px;
+}
+
+.tweet-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.tweet-header>a {
+    -webkit-flex-basis: 36px;
+    -ms-flex-preferred-size: 36px;
+    flex-basis: 36px;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -moz-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    height: 36px;
+    background-color: transparent;
+    margin-right: 9px;
+}
+
+.tweet-header>a>img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    border: 0;
+}
+
+.tweet-author {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+.tweet-author-decorated-name {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.tweet-author-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 4px;
+    font-weight: 700;
+}
+
+.tweet-author-verified {
+    position: static;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -moz-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    padding-right: 4px;
+}
+
+.tweet-icon-verified {
+    width: 1.11111em;
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h64v72H0z%22%2F%3E%3Cpath%20fill%3D%22%231da1f2%22%20d%3D%22M3%2037.315c0%204.125%202.162%207.726%205.363%209.624-.056.467-.09.937-.09%201.42%200%206.103%204.72%2011.045%2010.546%2011.045%201.295%200%202.542-.234%203.687-.686C24.22%2062.4%2027.827%2064.93%2032%2064.93c4.174%200%207.782-2.53%209.49-6.213%201.148.45%202.39.685%203.69.685%205.826%200%2010.546-4.94%2010.546-11.045%200-.483-.037-.953-.093-1.42C58.83%2045.04%2061%2041.44%2061%2037.314c0-4.37-2.42-8.15-5.933-9.946.427-1.203.658-2.5.658-3.865%200-6.104-4.72-11.045-10.545-11.045-1.302%200-2.543.232-3.69.688-1.707-3.685-5.315-6.216-9.49-6.216-4.173%200-7.778%202.53-9.492%206.216-1.146-.455-2.393-.688-3.688-.688-5.827%200-10.545%204.94-10.545%2011.045%200%201.364.23%202.662.656%203.864C5.42%2029.163%203%2032.944%203%2037.314z%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M17.87%2039.08l7.015%206.978c.585.582%201.35.873%202.116.873.77%200%201.542-.294%202.127-.883.344-.346%2015.98-15.974%2015.98-15.974%201.172-1.172%201.172-3.07%200-4.243-1.17-1.17-3.07-1.172-4.242%200l-13.87%2013.863-4.892-4.868c-1.174-1.168-3.074-1.164-4.242.01-1.168%201.176-1.163%203.075.01%204.244z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.tweet-author-screenname {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    color: #697882;
+}
+
+.tweet-brand {
+    margin-left: auto;
+}
+
+.tweet-brand a {
+    color: #2b7bb9;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.tweet-icon-bird {
+    width: 1.25em;
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%231da1f2%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.tweet-body {
+    margin-top: 14px;
+}
+
+.tweet-text {
+    white-space: pre-wrap;
+    cursor: text;
+    word-wrap: break-word;
+    margin: 13px 0 !important;
+}
+
+.tweet-info,
+.tweet-coordinates {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: #697882;
+}
+
+.tweet-icon-heart {
+    width: 1.25em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath class='icon' fill='%23697882' d='M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.813-1.148 2.353-2.73 4.644-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.375-7.454 13.11-10.037 13.156H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.035 11.596 8.55 11.658 1.52-.062 8.55-5.917 8.55-11.658 0-2.267-1.822-4.255-3.902-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.015-.03-1.426-2.965-3.955-2.965z'/%3E%3C/svg%3E");
+}
+
+.tweet-icon-location {
+    color: #697882;
+    width: 1.25em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' fill='%23697882' %3E%3Cpath opacity='0' d='M0 0h24v24H0z' /%3E%3Cpath d='M12 2.03c-4.792 0-8.692 3.9-8.692 8.692 0 1.9.603 3.707 1.752 5.234 1.628 2.07 6.278 5.757 6.475 5.912.136.108.3.162.465.162s.33-.054.465-.162c.197-.155 4.847-3.84 6.484-5.925 1.14-1.515 1.74-3.32 1.74-5.222 0-4.79-3.9-8.69-8.69-8.69zm0 12c-1.933 0-3.5-1.568-3.5-3.5s1.567-3.5 3.5-3.5 3.5 1.566 3.5 3.5-1.567 3.5-3.5 3.5z' /%3E%3C/svg%3E");
+}
+
+.tweet-icon {
+    display: inline-block;
+    height: 1.25em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: text-bottom;
+}
+
+.tweet-info-heart-stat {
+    margin-left: 3px;
+}
+
+.tweet-info-timegeo {
+    margin-left: 12px;
+    color: #697882;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.tweet-icon-notice {
+    height: 18px;
+    width: 18px;
+    background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cg%20transform%3D%22translate(8%208)%22%3E%3Cpath%20fill%3D%22%23657786%22%20fill-opacity%3D%22.8%22%20d%3D%22M28%203.11C14.278%203.11%203.11%2014.276%203.11%2028c0%2013.723%2011.166%2024.887%2024.89%2024.887S52.89%2041.723%2052.89%2028C52.89%2014.274%2041.724%203.11%2028%203.11z%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M28%2044.593c-1.718%200-3.11-1.393-3.11-3.112V30.076c0-1.718%201.392-3.11%203.11-3.11s3.11%201.392%203.11%203.11V41.48c0%201.72-1.392%203.113-3.11%203.113z%22%2F%3E%3Ccircle%20fill%3D%22%23FFF%22%20cx%3D%2228%22%20cy%3D%2218.148%22%20r%3D%224.667%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M28%2056C12.56%2056%200%2043.44%200%2028S12.56%200%2028%200s28%2012.56%2028%2028-12.56%2028-28%2028zm0-49.778C15.99%206.222%206.222%2015.992%206.222%2028S15.992%2049.778%2028%2049.778c12.01%200%2021.778-9.77%2021.778-21.778S40.008%206.222%2028%206.222z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+}
+
+.tweet-text a,
+.tweet-text a:link,
+.tweet-text a:visited {
+    color: #2B7BB9 !important;
+}
+
+.tweet-text a:hover {
+    color: #1DA1F2 !important;
+}
+
+.tweet a,
+.tweet a:link,
+.tweet a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tweet a:hover {
+    color: #1DA1F2;
+}
+
+.tweet-media {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.tweet-media>a {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    transition: opacity .5s;
+    color: white !important;
+}
+
+.tweet-media img {
+    border: 0;
+    line-height: 0;
+    width: 100%
+}
+
+.tweet-media-overlay {
+    position: absolute;
+    top: 43%;
+    left: 43%;
+}
+
+.tweet-icon-play {
+    width: 80px;
+    height: 80px;
+    background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2060%2072%22%3E%3Cpath%20opacity%3D%22.8%22%20fill%3D%22%231DA1F2%22%20d%3D%22M30%2012C16.768%2012%206%2022.765%206%2036s10.766%2023.998%2024%2023.998%2024-10.765%2024-24S43.235%2012%2030%2012z%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M39.2%2034.34l-12-9c-.606-.455-1.418-.528-2.094-.19-.677.34-1.106%201.032-1.106%201.79v18c0%20.758.428%201.45%201.106%201.79.283.14.59.21.894.21.425%200%20.847-.136%201.2-.4l12-9c.503-.377.8-.97.8-1.6%200-.63-.295-1.223-.8-1.6z%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M30%2015c11.598%200%2021%209.402%2021%2021s-9.4%2020.998-21%2020.998-21-9.402-21-21S18.4%2015%2030%2015m0-6C15.112%209%203%2021.11%203%2036s12.112%2026.998%2027%2026.998%2027-12.11%2027-27S44.888%209%2030%209z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.tweet-coordinates>span {
+    margin-left: 8px;
+}
+
+img.emoji {
+    cursor: default;
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+.multiple-media-overlay {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 25px;
+    padding: 0 5px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(21, 24, 40, 0.75);
+}

@@ -1,0 +1,22 @@
+<div class="legend-title-container">
+
+    {% if emoji == 'user' %}
+    <p>
+        <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + title[1:] }}">
+            <img draggable="false" class="emoji" alt="👤" src="https://twemoji.maxcdn.com/2/72x72/1f464.png"> {{ title }}
+        </a>
+    </p>
+
+    {% elif emoji == 'file' %}
+    <p><img draggable="false" class="emoji" alt="📄" src="https://twemoji.maxcdn.com/2/72x72/1f4c4.png"> {{ title }}</p>
+
+    {% else %}
+    <p>{{ title }}</p>
+
+    {% endif %}
+</div>
+
+<div class="legend-details">
+    <p>Generated {{ gen_datetime }} UTC</p>
+    <p><a target="_blank" rel="noreferrer" href="https://github.com/r3mlab/tweetsmapper">tweetsmapper v{{ version }}</a></p>
+</div>

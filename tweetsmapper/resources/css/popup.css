@@ -1,0 +1,85 @@
+/* Tabs */
+.leaflet-popup-content {
+    width: 470px;
+    margin: 7px 9px !important;
+    min-height: 205px;
+}
+
+.tabs {
+    position: relative;
+    min-height: 200px;
+    clear: both;
+    margin-top: 20px;
+    font: normal normal 14px/1.4 Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+    color: #1c2022;
+}
+
+.tab {
+    visibility: hidden;
+}
+
+.tab:first-of-type {
+    visibility: visible;
+}
+
+.tabs-link {
+    position: relative;
+    top: -14px;
+    height: 20px;
+    left: -40px;
+}
+
+.tab-link {
+    display: inline-block;
+    padding: 6px 14px;
+    position: relative;
+    list-style-type: none;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.tabs-link a li {
+    border-right: 1px solid #e1e8ed;
+}
+
+.tabs-link a:last-of-type li {
+    border-right: none;
+}
+
+.tabs-link a:hover {
+    text-decoration: none;
+    color: #1DA1F2;
+}
+
+.content {
+    background: white;
+    /* position:absolute; */
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.content-location {
+    position: absolute;
+}
+
+.tab:target {
+    visibility: visible;
+}
+
+/* Override Leaflet defaults */
+.leaflet-popup-content-wrapper {
+    padding: 8px !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    padding: 0 !important;
+    font: 18px/20px Tahoma, Verdana, sans-serif !important;
+    margin: 6px;
+}
+
+.leaflet-popup-content p {
+    margin: 0 !important;
+}

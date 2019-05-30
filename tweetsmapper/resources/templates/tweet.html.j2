@@ -1,0 +1,81 @@
+<div class="tweet-container">
+
+    <div>
+        {% if tweet.entities.media %}
+        <div class="tweet-media" title="View media on Twitter">
+            <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str }}">
+                {% if tweet.extended_entities['media']|length > 1 %}
+                <div class="multiple-media-overlay">
+                    + {{ tweet.extended_entities['media']|length - 1 }} more media
+                </div>
+                {% endif %}
+                {% if tweet.extended_entities['media'][0]['type'] == 'video' %}
+                <div class="tweet-media-overlay">
+                    <div class="tweet-icon tweet-icon-play"></div>
+                </div>
+                {% endif %}
+                <img src="{{ tweet.entities['media'][0]['media_url_https'] }}">
+            </a>
+        </div>
+        {% endif %}
+
+        <div class="tweet">
+
+            <div class="tweet-flex tweet-header">
+                <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + tweet.user.screen_name }}">
+                    <img alt="avatar" src="{{ tweet.user.profile_image_url_https }}">
+                </a>
+                <div class="tweet-flex tweet-author">
+                    <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + tweet.user.screen_name }}">
+                        <span class="tweet-flex tweet-author-decorated-name">
+                            <span class="tweet-author-name">{{ tweet.user.name }}</span>
+                            {% if tweet.user.verified %}
+                            <span class="tweet-author-verified">
+                                <div class="tweet-icon tweet-icon-verified"></div>
+                            </span>
+                            {% endif %}
+                        </span>
+                        <span class="tweet-author-screenname">@{{ tweet.user.screen_name }}</span>
+                    </a>
+                </div>
+                <div class="tweet-brand">
+                    <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str }}">
+                        <div class="tweet-icon tweet-icon-bird" title="View on Twitter"></div>
+                    </a>
+                </div>
+            </div>
+            <!-- END of header -->
+            <div class="tweet-body">
+                <p class="tweet-text" lang="en">{{ tweet_html_text }}</p>
+                <div class="tweet-flex tweet-info">
+                    <div>
+                        <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str }}">
+                            <div class="tweet-icon tweet-icon-heart"></div>
+                            <span class="tweet-info-heart-stat">{{ tweet_favcount }}</span>
+                        </a>
+                    </div>
+                    <div class="tweet-info-timegeo">
+                        <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str }}">
+                            <time>{{ tweet_date_str }}</time>
+                        </a>
+                        {% if tweet.place %}
+                        ·
+                        <a target="_blank" rel="noreferrer" href="{{ 'https://twitter.com/search?q=place:' + tweet.place.id }}" title="Explore this place on Twitter">{{ tweet.place.full_name }}</a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <a class="tweet-icon tweet-icon-notice" target="_blank" rel="noreferrer" href="https://support.twitter.com/articles/20175256" title="Twitter Ads info and privacy"></a>
+                    </div>
+
+                </div>
+                {% if tweet.coordinates %}
+                <div class="tweet-flex tweet-coordinates">
+                    <div class="tweet-icon tweet-icon-location"></div>
+                    <span>Lon: {{ tweet.coordinates['coordinates'][0] }}</span>
+                    <span>Lat: {{ tweet.coordinates['coordinates'][1] }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

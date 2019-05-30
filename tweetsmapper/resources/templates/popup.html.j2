@@ -1,0 +1,39 @@
+<div class="tabs">
+    <ul class="tabs-link">
+        <a href="#tweet-tab">
+            <li class="tab-link"> <span>Tweet</span></li>
+        </a>
+        {% if tweet.place %}
+        <a href="#place-tab">
+            <li class="tab-link"> <span>Place</span></li>
+        </a>
+        {% endif%}
+        {%if tweet.coordinates %}
+        <a href="#coordinates-tab">
+            <li class="tab-link"> <span>Coordinates</span></li>
+        </a>
+        {% endif %}
+    </ul>
+    <div class="tab" id="tweet-tab">
+        <div class="content">
+            {% include 'tweet.html.j2' %}
+        </div>
+    </div>
+
+    {% if tweet.place %}
+    <div class="tab" id="place-tab">
+        <div class="content content-location">
+            {% include 'place-tab.html.j2' %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if tweet.coordinates %}
+    <div class="tab" id="coordinates-tab">
+        <div class="content content-location">
+            {% include 'coordinates-tab.html.j2' %}
+        </div>
+    </div>
+    {% endif %}
+
+</div>

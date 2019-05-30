@@ -1,0 +1,49 @@
+<div class="location-container">
+
+    <div class="location-info">
+
+        <table>
+            <tr>
+                <td>Longitude:</td>
+                <td class="location-detail">{{ tweet.coordinates['coordinates'][0] }}</td>
+            </tr>
+            <tr>
+                <td>Latitude:</td>
+                <td class="location-detail">{{ tweet.coordinates['coordinates'][1] }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="location-search">
+        <div class="location-title">Search</div>
+
+
+        <div class="services-list">
+            <ul>
+
+                <li>
+                    <strong><a href="#" rel="noreferrer" title="⚠ Your browser may block tabs, check for prompts" onclick="
+    {% for service in services.from_coordinates %}
+    {% if service.countries[0] == "all" %}
+    window.open('{{ service.link.format(lat=tweet.coordinates['coordinates'][1],lon=tweet.coordinates['coordinates'][0]) }}');
+    {% elif tweet.place and tweet.place.country_code in service.countries%}
+    window.open('{{ service.link.format(lat=tweet.coordinates['coordinates'][1],lon=tweet.coordinates['coordinates'][0]) }}');
+    {% endif %}
+    {% endfor %}
+    ">All</a></strong>
+                </li>
+
+                {% for service in services.from_coordinates %}
+                {% if service.countries[0] == "all" or tweet.place.country_code in service.countries %}
+                <li><a target="_blank" rel="noreferrer" href="{{ service.link.format(lat=tweet.coordinates['coordinates'][1],lon=tweet.coordinates['coordinates'][0]) }}" title="{{ service.name }}">
+                        <div class="service-logo {{ service.logo_css_class }}"></div>
+                    </a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>

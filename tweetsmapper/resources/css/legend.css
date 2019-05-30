@@ -1,0 +1,71 @@
+.legend-title-container,
+.legend-details {
+    position: absolute;
+    z-index: 9999;
+    font: normal normal 14px/1.4 Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+    width: 260px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.legend-title-container {
+    bottom: 107px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-top: 18px;
+}
+
+.legend-title-container p {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.legend-details {
+    bottom: 14px;
+    left: 0;
+}
+
+.legend-title-container a {
+    color: black;
+}
+
+.legend-details p {
+    text-align: left;
+    font-size: 0.6em;
+    color: #697882;
+    margin-bottom: 0;
+}
+
+.legend-details p a {
+    color: #697882;
+}
+
+.legend-title-container a:hover,
+.legend-details a:hover {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+/* Custom Leaflet LayerControl */
+.leaflet-control-layers-expanded {
+    padding-top: 15px !important;
+    padding-bottom: 45px !important;
+    width: 260px;
+    padding-left: 20px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    background-color: #fff !important;
+}
+
+.leaflet-control-layers-overlays {
+    font: normal normal 12px/1.5 Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+    color: #1c2022;
+    font-weight: normal;
+}
+
+label {
+    font-weight: unset !important;
+}

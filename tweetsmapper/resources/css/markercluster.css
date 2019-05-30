@@ -1,0 +1,26 @@
+/* Custom MarkerCluster style */
+.marker-cluster-blue {
+    background-color: rgba(29, 161, 242, 0.6);
+    margin-left: -20px;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+}
+
+.marker-cluster-blue div {
+    background-color: rgba(29, 161, 242, 0.6);
+}
+
+.marker-cluster-blue div span {
+    font-weight: bold;
+    color: white;
+}
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-blue {
+    background-color: rgb(29, 161, 242);
+}
+
+.leaflet-oldie .marker-cluster-blue div {
+    background-color: rgb(29, 161, 242);
+}
