@@ -58,21 +58,6 @@ def input_file(path):
         )
 
 
-def tweets_range(user_input):
-    """Validate user input for tweets limit.
-
-    This allows for a better error message when entering an out of range number.
-    """
-    if user_input == "all":
-        return user_input
-    elif user_input.isdigit():
-        return int(user_input)
-    else:
-        raise argparse.ArgumentTypeError(
-            "Wrong value for argument -l. Value should be an integer or 'all'."
-        )
-
-
 def output_path(path):
     """Validate output path."""
     if os.path.dirname(path) == "" or os.path.isdir(os.path.dirname(path)):

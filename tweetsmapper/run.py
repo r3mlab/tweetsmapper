@@ -49,11 +49,11 @@ def get_tweets(args):
         api.get_user_info(twitter_api, args.screen_name)
 
         # Download
-        if not args.limit == "all" and args.limit <= 3200:
+        if args.limit and args.limit <= 3200:
             geo_tweets = api.download_tweets(
                 twitter_api, args.screen_name, limit=args.limit
             )
-        elif args.limit == "all" or args.limit > 3200:
+        else:
             ids = scrape.get_ids(args.screen_name, args.limit)
             tweets = api.hydrate(ids, twitter_api)
             geo_tweets = [t for t in tweets if results.is_geo(t)]
@@ -61,7 +61,6 @@ def get_tweets(args):
     elif input_source == "file":
         log.debug("Input source = file")
         if args.limit != 3200:
-            print(args.limit)
             log.info(
                 "Note: Limit argument (-l) has no effect when mapping from a file."
             )
@@ -128,9 +127,8 @@ def main():
     parser.add_argument(
         "-l",
         "--limit",
-        type=args_check.tweets_range,
-        help="Number of tweets to retrieve (default = 3200)",
-        default=3200,
+        type=int,
+        help="Limit the number of tweets to retrieve (default = no limit)",
         metavar="N",
     )
 

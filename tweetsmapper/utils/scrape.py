@@ -33,13 +33,16 @@ def get_ids(screen_name, limit):
     """Scrape tweet IDs for a given user."""
     c = twint.Config()
     c.Username = screen_name
-    if limit != "all":
+    if limit:
         c.Limit = limit
     c.Store_object = True
     # c.Hide_output = True
     c.Format = "\033[A\33[2K\rID: {id} | DATE: {date}\r"
 
-    log.info(f"Fetching tweet IDs for user {screen_name}. (May take a while)\n")
+    limit_str = limit if limit != None else "all"
+    log.info(
+        f"Trying to collect {limit_str} tweet IDs for user {screen_name}. (May take a while)\n"
+    )
     twint.run.Search(c)
     tweets = twint.output.tweets_object
     ids = [t.id for t in tweets]

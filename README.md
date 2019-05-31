@@ -11,7 +11,8 @@ Click on a screenshot to browse the demo map:
 </a>
 
 ## Features
-- Download a user's tweets via the API and generate a map.
+- Download a user's tweets via the API  and generate a map.
+- Retrieve full user timeline by collecting tweet IDs first and hydrating them.
 - Map a collection of tweets. Supported formats:
     - `.jsonl` file generated with [twarc](https://github.com/DocNow/twarc)
     - `.txt` file generated with [Twint](https://github.com/twintproject/twint) (uses the API)
@@ -82,7 +83,6 @@ Alternatively, you can define the environment variables `CONSUMER_KEY`, `CONSUME
 ## Usage
 
 ```
-tweetsmapper v1.0 - (C) r3mlab - GPLv3 License - https://github.com/r3mlab/tweetsmapper
 usage: tweetsmapper [-h] [-n SCREEN_NAME] [-i INPUT_FILE] [-l N]
                     [-o OUTPUT_FILE] [-t CUSTOM_TITLE] [--configure]
                     [-c CONFIG_FILE]
@@ -95,7 +95,8 @@ optional arguments:
                         Screen name of the user to target (uses the API)
   -i INPUT_FILE, --input-file INPUT_FILE
                         Path to a collection of tweets. Supports: JSONL, TXT
-  -l N, --limit N       Number of tweets to retrieve (default = 3200)
+  -l N, --limit N       Limit the number of tweets to retrieve (default = no
+                        limit)
   -o OUTPUT_FILE, --output-path OUTPUT_FILE
                         Map output file
   -t CUSTOM_TITLE, --custom-title CUSTOM_TITLE
@@ -107,9 +108,9 @@ optional arguments:
 
 #### Usage examples
 
-**Fetch the last 500 tweets for user `@TwitterFrance` and generate a map with the geo-enabled ones:**
+**Fetch all tweets for user `@TwitterFrance` and generate a map with the geo-enabled ones:**
 ```bash
-tweetsmapper -n TwitterFrance -l 500
+tweetsmapper -n TwitterFrance
 ```
 
 **Map all geo-enabled tweets from a `.jsonl` generated with [twarc](https://github.com/DocNow/twarc):**
